@@ -7,7 +7,7 @@ import Settings from './sections/Settings.jsx'
 
 function App() {
   const [imageData, setImageData] = useState(null) // ← this will hold the image
-  const [charAmount, setCharAmount] = useState(100)
+  const [charAmount, setCharAmount] = useState(40)
   const [brightness, setBrightness] = useState(1)
 
   useEffect(() => {

@@ -52,7 +52,7 @@ function AsciiConverter({ imageData, onConvert, charAmount, brightness }) {
         // return full string with line breaks
 
         const asciiChars = '@%#=:*. ' // Dark → light
-        //const asciiChars = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^` '
+        // const asciiChars = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^` '
         let output = ''
 
         for (let y = 0; y < height; y++){

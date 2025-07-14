@@ -1,16 +1,13 @@
 .display-section {
-  border: 2px solid #00ff51;
+  border: 2px solid #303030;
 }
 .ascii-art-container {
   width: 400px;      /* fixed width */
   height: 300px;     /* fixed height */
   overflow: auto;    /* allow scrolling if content is bigger */
-  border: 1px solid #ccc;
-  background: #000;
   padding: 10px;
   font-family: monospace;
-  font-size: 10px;
-  line-height: 10px;
+  letter-spacing: 3px; /* try 0.5px–2px to taste */
 }
 
 .ascii-art-content {
