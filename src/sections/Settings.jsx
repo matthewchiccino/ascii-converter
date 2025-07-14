@@ -1,10 +1,7 @@
 import { useState } from 'react'
 import './settings.css'
 
-function Settings() {
-
-  const [charAmount, setCharAmount] = useState(100); // or whatever default
-  const [brightness, setBrightness] = useState(1); // 1 = normal brightness
+function Settings({ charAmount, setCharAmount, brightness, setBrightness }) {
 
   return (
     <div>
@@ -17,7 +14,7 @@ function Settings() {
       <input
         type="range"
         min="5"
-        max="500"
+        max="200"
         step="1"
         value={charAmount}
         onChange={(e) => setCharAmount(parseInt(e.target.value))}

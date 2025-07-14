@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 //  - useRef: lets you create a mutable object that persists across renders (commonly used to access DOM elements).
 //  - useState: lets you add React state to function components.
 
-function AsciiConverter({ imageData, onConvert }) {
+function AsciiConverter({ imageData, onConvert, charAmount, brightness }) {
   // useRef to get a reference to the <canvas> DOM element.
   // This allows us to draw and manipulate the image pixels via the Canvas API.
   const canvasRef = useRef(null)
@@ -24,7 +24,7 @@ function AsciiConverter({ imageData, onConvert }) {
       const canvas = canvasRef.current
       const ctx = canvas.getContext('2d')
 
-      const targetWidth = 45 // 👈 You can change this
+      const targetWidth = charAmount // 👈 You can change this
       const aspectRatio = img.height / img.width
       const targetHeight = Math.round(targetWidth * aspectRatio)
 
@@ -51,8 +51,8 @@ function AsciiConverter({ imageData, onConvert }) {
         // for each pixel, average/b/g to map character
         // return full string with line breaks
 
-        const asciiChars = '@%#=o:*. ' // Dark → light
-        //const asciiChars = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^` '
+        const asciiChars = '@%#=:*. ' // Dark → light
+        // const asciiChars = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^` '
         let output = ''
 
         for (let y = 0; y < height; y++){
@@ -73,7 +73,7 @@ function AsciiConverter({ imageData, onConvert }) {
         console.log(output)
         return output
     }
-  }, [imageData, onConvert])
+  }, [imageData, onConvert, charAmount, brightness])
 
   return (
     <div style={{ display: 'none' }}>

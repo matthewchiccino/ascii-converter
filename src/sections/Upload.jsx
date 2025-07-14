@@ -21,13 +21,10 @@ function Upload({ onUpload }) {
 
   return (
     <div>
-      <h3>Upload image section</h3>
-
-      {/* Add your upload UI here */}
-      <p>This is where users will upload their images.</p>
+      <h3>Upload image</h3>
       <div className="upload-container">
         <input type="file" accept="image/*" onChange={handleImageUpload} />
-        {image && <img src={image} alt="Uploaded Preview" style={{ maxWidth: '300px', marginTop: '1rem' }} />}
+        {image && <img src={image} alt="Uploaded Preview" style={{ maxWidth: '200px', marginTop: '1rem' }} />}
       </div>
     </div>
   )
