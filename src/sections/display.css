@@ -7,7 +7,8 @@
   overflow: auto;    /* allow scrolling if content is bigger */
   padding: 10px;
   font-family: monospace;
-  letter-spacing: 3px; /* try 0.5px–2px to taste */
+  letter-spacing: 2.25px; /* try 0.5px–2px to taste */
+  line-height: 0.75; /* default is usually ~1.5 */
 }
 
 .ascii-art-content {
