@@ -51,7 +51,7 @@ function AsciiConverter({ imageData, onConvert, charAmount, brightness }) {
         // for each pixel, average/b/g to map character
         // return full string with line breaks
 
-        const asciiChars = '@%#=:*. ' // Dark → light
+        const asciiChars = '@%=-:. ' // Dark → light
         // const asciiChars = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^` '
         let output = ''
 
