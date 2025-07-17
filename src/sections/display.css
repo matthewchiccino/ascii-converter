@@ -2,8 +2,8 @@
   border: 2px solid #303030;
 }
 .ascii-art-container {
-  width: 400px;      /* fixed width */
-  height: 300px;     /* fixed height */
+  width: 450px;      /* fixed width */
+  height: 400px;     /* fixed height */
   overflow: auto;    /* allow scrolling if content is bigger */
   padding: 10px;
   font-family: monospace;
