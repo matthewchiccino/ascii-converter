@@ -3,15 +3,42 @@
 }
 
 .upload-input {
-  padding: 8px;
   border: 2px dashed #666;
-  background-color: #f0f0f0;
-  font-family: inherit;
-  font-size: 1rem;
   cursor: pointer;
   border-radius: 6px;
 }
 
-.upload-input:hover {
-  background-color: #e0e0e0;
+.sample-gallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
+
+.sample-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 3x solid transparent;
+}
+
+.sample-thumbnail:hover {
+  border: 2px solid #b1b1b1;
+}
+
+.toggle-button {
+  margin-top: 1rem;
+  background-color: #464646;
+  border: 1px solid #606060;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.upload-container {
+  display: flex;
+  align-items: center;
+}
+

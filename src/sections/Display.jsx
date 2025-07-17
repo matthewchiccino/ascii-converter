@@ -2,11 +2,10 @@ import { useState } from 'react'
 import AsciiConverter from './AsciiConverter.jsx'
 import './display.css'
 
-function Display({ imageData, charAmount, brightness }) {
+function Display({ imageData, charAmount, brightness, buttonText, setButtonText}) {
 
   if (!imageData) return <p>No image uploaded yet</p>
   const [asciiString, setAsciiString] = useState(null) // ← this will ascii string
-  const [buttonText, setButtonText] = useState('Copy');
 
   const handleCopy = () => {
     navigator.clipboard.writeText(asciiString).then(() => {
