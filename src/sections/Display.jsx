@@ -2,29 +2,46 @@ import { useState } from 'react'
 import AsciiConverter from './AsciiConverter.jsx'
 import './display.css'
 
-function Display({ imageData, charAmount, brightness, buttonText, setButtonText}) {
-
-  if (!imageData) return <p>No image uploaded yet</p>
-  const [asciiString, setAsciiString] = useState(null) // ← this will ascii string
+function Display({ imageData, charAmount, brightness, buttonText, setButtonText }) {
+  const [asciiString, setAsciiString] = useState(null)
 
   const handleCopy = () => {
+    if (!asciiString) return
     navigator.clipboard.writeText(asciiString).then(() => {
-    setButtonText('Copied!');
-  });
-  };
+      setButtonText('Copied!')
+      setTimeout(() => setButtonText('Copy'), 2000)
+    })
+  }
+
+  if (!imageData) {
+    return (
+      <div className="display-card card">
+        <h2 className="card-title">Output</h2>
+        <div className="display-empty">
+          <span className="display-empty-icon">▤</span>
+          <p>Upload an image to see ASCII art here</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div>
-      <h3>Display Section</h3>
-      {/* we have access to the imageData prop because it is passed down from app.jsx */}
-      <AsciiConverter imageData = {imageData} onConvert={setAsciiString} charAmount={charAmount} brightness={brightness}/>
-      <p>ASCII Output:</p>
-      <div className="ascii-art-container">
-        <pre className="ascii-art-content">
-          {asciiString}
-        </pre>
+    <div className="display-card card">
+      <div className="display-header">
+        <h2 className="card-title">Output</h2>
+        <button className="btn btn-secondary" onClick={handleCopy} disabled={!asciiString}>
+          {buttonText}
+        </button>
       </div>
-      <button onClick={handleCopy}>{buttonText}</button>
+      <AsciiConverter
+        imageData={imageData}
+        onConvert={setAsciiString}
+        charAmount={charAmount}
+        brightness={brightness}
+      />
+      <div className="ascii-art-container">
+        <pre className="ascii-art-content">{asciiString}</pre>
+      </div>
     </div>
   )
 }

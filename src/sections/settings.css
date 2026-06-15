@@ -1,3 +1,37 @@
-.settings-section {
-  border: 2px solid #303030;
+.setting-group + .setting-group {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.setting-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.setting-label-row label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+}
+
+.setting-value {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.setting-hint {
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.range-slider {
+  margin-top: 0.25rem;
 }

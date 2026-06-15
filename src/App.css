@@ -1,29 +1,124 @@
-#root {
-  max-width: 1280px;
+.app {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1.5rem;
+  min-height: 100vh;
 }
 
-.body {
-  /* styles for the container div */
-  width: fit-content;
-  padding: 20px;
-  /*border: 4px solid #ff0000;*/
-  margin: 0 auto;
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.25rem;
+}
+
+.app-title {
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.app-subtitle {
+  margin-top: 0.4rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1px;
+  align-items: start;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.app-sidebar {
   display: flex;
-  gap: 10px;
-  align-items: center;     /* vertically centers items in the row */
+  flex-direction: column;
+  gap: 1px;
+  background: var(--color-border);
+}
+
+.app-display {
+  min-width: 0;
+  background: var(--color-surface);
+}
+
+.card {
+  background: var(--color-surface);
+  border: none;
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.btn-secondary {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-border);
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 0.75rem;
 }
 
 @media (max-width: 768px) {
-  .body {
-    flex-direction: column;
-    align-items: center; 
-    padding: 0px;
+  .app {
+    padding: 1rem;
   }
-  .upload-container {
-    flex-direction: column;
-    align-items: center; 
+
+  .app-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+
+  .app-sidebar {
+    order: 1;
+  }
+
+  .app-display {
+    order: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
   }
 }
