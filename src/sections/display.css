@@ -1,17 +1,83 @@
-.display-section {
-  border: 2px solid #303030;
+.display-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
 }
+
+.display-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.display-header .card-title {
+  margin-bottom: 0;
+}
+
+.display-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem 1rem;
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  min-height: 300px;
+}
+
+.display-empty-icon {
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
 .ascii-art-container {
-  width: 450px;      /* fixed width */
-  height: 400px;     /* fixed height */
-  overflow: auto;    /* allow scrolling if content is bigger */
+  flex: 1;
+  width: 100%;
+  min-height: 400px;
+  max-height: min(75vh, 600px);
+  overflow: auto;
   padding: 10px;
+  background: #000000;
+  border: 1px solid var(--color-border);
   font-family: monospace;
-  letter-spacing: 2.25px; /* try 0.5px–2px to taste */
-  line-height: 0.75; /* default is usually ~1.5 */
+  letter-spacing: 2.25px;
+  line-height: 0.75;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ascii-art-content {
-  white-space: pre;  /* preserves whitespace and line breaks */
-  color: rgb(183, 183, 183);       /* optional green ASCII text */
+  margin: 0;
+  white-space: pre;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: rgb(183, 183, 183);
+}
+
+@media (max-width: 768px) {
+  .display-card {
+    min-height: 300px;
+  }
+
+  .ascii-art-container {
+    min-height: 300px;
+    max-height: 55vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .display-empty {
+    min-height: 200px;
+    padding: 2rem 1rem;
+  }
+
+  .ascii-art-container {
+    min-height: 250px;
+    max-height: 50vh;
+    letter-spacing: 1.5px;
+  }
 }
